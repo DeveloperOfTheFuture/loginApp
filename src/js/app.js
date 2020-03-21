@@ -9,6 +9,12 @@ import {
   showInputErr,
   removeInputErr
 } from './views/form';
+import {
+  login
+} from './services/auth.service';
+import {
+  notify
+} from './views/notifications';
 
 const {
   form,
@@ -25,7 +31,7 @@ form.addEventListener('submit', e => {
 
 inputs.forEach(el => el.addEventListener('focus', () => removeInputErr(el)));
 
-function onSubmit() {
+async function onSubmit() {
   const isValidForm = inputs.every(el => {
     const isValidInput = validate(el);
     if (!isValidInput) {
@@ -35,5 +41,19 @@ function onSubmit() {
     return isValidInput;
   });
 
-  console.log(isValidForm);
+  if (!isValidForm) return;
+
+  try {
+    await login(inputEmail.value, inputPassword.value);
+    form.reset();
+    notify({
+      msg: 'Login success',
+      className: 'alert-success'
+    });
+  } catch (err) {
+    notify({
+      msg: 'Login failed',
+      className: 'alert-danger'
+    });
+  }
 }
