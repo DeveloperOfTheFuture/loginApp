@@ -15,6 +15,9 @@ import {
 import {
   notify
 } from './views/notifications';
+import {
+  getNews
+} from './services/news.service';
 
 const {
   form,
@@ -22,6 +25,9 @@ const {
   inputPassword
 } = UI;
 const inputs = [inputEmail, inputPassword];
+
+// login - denis.m.pcspace@gmail.com
+// password - dmgame12345
 
 //Events
 form.addEventListener('submit', e => {
@@ -45,6 +51,7 @@ async function onSubmit() {
 
   try {
     await login(inputEmail.value, inputPassword.value);
+    await getNews();
     form.reset();
     notify({
       msg: 'Login success',
