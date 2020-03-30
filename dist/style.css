@@ -9739,7 +9739,7 @@ a.text-dark:hover, a.text-dark:focus {
 }
 
 .login-greeting-screen {
-  background: var(--teal);
+  background: var(--primary);
   width: 50%;
   padding: 20px;
 }

@@ -13,17 +13,17 @@
     <div class="login-form-wrap d-flex align-items-center">
       <div class="form-card card ml-auto">
         <div class="card-body">
-          <h4 class="card-title">Please Login</h4>
+          <h4 class="card-title">Login Form</h4>
           <form name="loginForm">
             <div class="form-group">
-              <label for="email">Email address</label>
+              <label for="email">Email</label>
               <input type="email" class="form-control" id="email" aria-describedby="emailHelp" placeholder="Enter email"
                 data-required="email" data-invalid-message="Please provide valid email example@example.com" />
             </div>
             <div class="form-group">
               <label for="password">Password</label>
-              <input type="password" class="form-control" id="password" placeholder="Password"
-                data-required="password" />
+              <input type="password" class="form-control" id="password" placeholder="Password" data-required="password"
+                data-invalid-message="Provide valid password" />
             </div>
             <button type="submit" class="btn btn-primary">Submit</button>
           </form>
@@ -32,12 +32,14 @@
     </div>
     <div class="login-greeting-screen d-flex align-items-center">
       <div class="login-greeting-screen-text">
-        <h1 class="login-greeting-screen-title">Login this</h1>
+        <h1 class="login-greeting-screen-title">Login Page</h1>
         <p class="login-greeting-screen-description">
-          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Maiores
-          inventore non accusantium earum, illo dolores reprehenderit laborum
-          ratione quos doloribus repellat eligendi deleniti. Ipsum voluptate
-          ipsa exercitationem eaque totam. A.
+          Валидация пользователя с помощью регулярных выражений, библиотеки axios и
+          axios.interceptors. В первый раз запрос выполняется какое-то время, поэтому
+          необходимо немного подождать до повяления всплывающего сообщения.
+          <p class="login-greeting-screen-description">
+            По регуляркам: на пароль стоит проверка > 4 символов;<br>email - по дефолту.
+          </p>
         </p>
       </div>
     </div>
